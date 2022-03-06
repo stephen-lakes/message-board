@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Board App</title>
+</head>
+<style>
+    body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    header, footer {
+        border: 1px solid #c4c4c4;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    header p {
+        color: orangered;
+        font-size: 20px;
+        font-weight: Lighter;
+    }
+    header p span{
+        color: blueviolet;
+    }
+    header nav ul li{
+        list-style: none;
+        display: inline;
+        padding: 10px;
+    }
+    header nav ul li a {
+        text-decoration: none;
+        color: black;
+    }
+
+    main {
+        min-height: 50vh;
+        display: flex;
+        gap: 10px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    main >* {
+        border: 1px solid #c4c4c4;
+        border-radius: 5px;
+        padding: 10px;
+    }
+    main ul li {
+        padding: 10px;
+        font-size: 20px;
+    }
+  
+</style>
+<body>
+    <header>
+        <p>Message<span>Board</span></p>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">home</a></li>
+                <li><a href="{% url 'about' %}">about</a></li>
+                <li><a href="{% url 'contact' %}">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <div>copyright @2022.</div>
+        <div>All Rights Reserved.</div>
+        
+    </footer>
+</body>
+</html>
